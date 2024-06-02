@@ -6,6 +6,9 @@ public class Dev {
     private String nome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
+    private int matricula;
+
+    private static int SEQUENCIA = 1;
 
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
@@ -37,14 +40,22 @@ public class Dev {
                 .sum();*/
     }
 
+    public Dev(String nome) {
+        this.nome = nome;
+        this.matricula = SEQUENCIA++;
+    }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+
+
+    public int getMatricula() {
+        return matricula;
     }
+
+
 
     public Set<Conteudo> getConteudosInscritos() {
         return conteudosInscritos;
